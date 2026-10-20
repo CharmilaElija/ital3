@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helena & Davi - 15.12.2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--vinho:#9B1B4A;--turquesa:#2AB7C0;--amarelo:#F9A91E;--creme:#FFFAF5;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+body{background:var(--creme);overflow-x:hidden;}
+
+/* CAPA - IMG_0047.jpeg */
+.capa{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;}
+.capa-foto{position:absolute;inset:0;background-image:url('IMG_0047.jpeg');background-size:cover;background-position:center top;}
+.capa-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.1),rgba(155,27,74,0.65));}
+.capa-conteudo{position:relative;z-index:2;text-align:center;color:white;padding:20px;}
+.capa-conteudo h1{font-family:'Great Vibes',cursive;font-size:68px;line-height:0.9;}
+.capa-conteudo .data{margin:15px 0 20px;font-size:15px;letter-spacing:3px;border-top:1px solid rgba(255,255,255,0.6);border-bottom:1px solid rgba(255,255,255,0.6);display:inline-block;padding:8px 20px;}
+.btn-ver{background:white;color:var(--vinho);border:none;padding:13px 30px;border-radius:30px;font-weight:700;}
+
+/* SEÇÕES */
+.secao{padding:50px 20px;text-align:center;max-width:500px;margin:0 auto;}
+.titulo-script{font-family:'Great Vibes',cursive;font-size:44px;color:var(--vinho);}
+.subtitulo{font-size:11px;letter-spacing:3px;color:#999;text-transform:uppercase;margin-bottom:15px;}
+.versiculo{padding:40px 25px;text-align:center;background:white;}
+.versiculo p{font-style:italic;font-size:14px;color:#777;line-height:1.6;}
+.foto-circular img{width:170px;height:170px;border-radius:50%;object-fit:cover;border:6px solid white;box-shadow:0 12px 30px rgba(0,0,0,0.15);}
+.foto-grande{width:100%;height:310px;object-fit:cover;border-radius:20px;margin:20px 0;}
+.contador{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:var(--vinho);color:white;padding:18px;border-radius:18px;}
+.contador span{display:block;font-size:22px;font-weight:700;}
+.botoes{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:25px 0;}
+.botao{padding:12px 20px;border-radius:30px;text-decoration:none;font-size:13px;font-weight:700;color:white;}
+.botao.turquesa{background:var(--turquesa);} .botao.amarelo{background:var(--amarelo);color:#5a2040;} .botao.vinho{background:var(--vinho);}
+
+/* CARROSSEL INFINITO IGUAL AO VÍDEO QUE VOCÊ MANDOU */
+.carrossel-section{padding:40px 0;max-width:500px;margin:0 auto;text-align:center;overflow:hidden;}
+.carrossel-container{width:100%;overflow:hidden;margin-top:20px;}
+.carrossel-track{display:flex;gap:12px;width:max-content;animation:scroll 20s linear infinite;}
+.carrossel-track img{width:155px;height:210px;object-fit:cover;border-radius:16px;flex-shrink:0;box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+.foto-final{width:100%;height:420px;object-fit:cover;border-radius:20px;}
+
+/* EFEITO SALTANDO */
+.animar{opacity:0;transform:translateY(50px);}
+.animar.ativo{animation:saltar 0.9s cubic-bezier(0.68,-0.55,0.265,1.55) forwards;}
+@keyframes saltar{0%{opacity:0;transform:translateY(60px) scale(0.9);}60%{opacity:1;transform:translateY(-10px) scale(1.04);}80%{transform:translateY(4px);}100%{opacity:1;transform:translateY(0) scale(1);}}
+</style>
+</head>
+<body>
+
+<!-- CAPA - IMG_0047.jpeg -->
+<section class="capa">
+  <div class="capa-foto"></div>
+  <div class="capa-overlay"></div>
+  <div class="capa-conteudo animar">
+    <p style="font-size:12px;letter-spacing:4px;">COM A BÊNÇÃO DE DEUS</p>
+    <h1>Helena<br>& Davi</h1>
+    <p class="data">15 • DEZ • 2027</p><br>
+    <button class="btn-ver" onclick="window.scrollTo({top:innerHeight,behavior:'smooth'})">VER CONVITE</button>
+  </div>
+</section>
+
+<div class="versiculo animar">
+  <p>"O amor é paciente, o amor é bondoso. Tudo sofre, tudo crê, tudo espera, tudo suporta."</p>
+  <strong>1 Coríntios 13:4-7</strong>
+</div>
+
+<!-- OS NOIVOS - IMG_0047.jpeg -->
+<section class="secao">
+  <h2 class="titulo-script animar">Os Noivos</h2>
+  <p class="subtitulo animar">Helena & Davi</p>
+  <div class="foto-circular animar"><img src="IMG_0047.jpeg"></div>
+  <p class="animar" style="margin-top:15px;font-size:14px;">Com a bênção de Deus e de seus pais, convidam para o seu casamento.</p>
+</section>
+
+<!-- AMIGOS E FAMÍLIA + CONTAGEM - IMG_0049.jpeg -->
+<section class="secao" style="background:white;">
+  <h2 class="titulo-script animar">Contagem Regressiva</h2>
+  <p class="subtitulo animar">Falta pouco!</p>
+  <img src="IMG_0049.jpeg" class="foto-grande animar">
+  <div class="contador animar">
+    <div><span id="d">00</span>Dias</div>
+    <div><span id="h">00</span>Horas</div>
+    <div><span id="m">00</span>Min</div>
+    <div><span id="s">00</span>Seg</div>
+  </div>
+  <div class="botoes animar">
+    <a class="botao turquesa" href="#">CONFIRMAR PRESENÇA</a>
+    <a class="botao amarelo" href="#">LOCAL</a>
+    <a class="botao turquesa" href="#">PRESENTES</a>
+    <a class="botao amarelo" href="#">FOTOS</a>
+  </div>
+</section>
+
+<!-- CARROSSEL PASSANDO IGUAL AO SEU VÍDEO - 4 FOTOS -->
+<section class="carrossel-section">
+  <h2 class="titulo-script animar">Nosso Amor</h2>
+  <p class="subtitulo animar">Fotos que contam nossa história</p>
+  <div class="carrossel-container animar">
+    <div class="carrossel-track">
+      <img src="IMG_0047.jpeg">
+      <img src="IMG_0049.jpeg">
+      <img src="IMG_0050.jpeg">
+      <img src="IMG_0051.jpeg">
+      <!-- DUPLICADO PARA NÃO PARAR NUNCA -->
+      <img src="IMG_0047.jpeg">
+      <img src="IMG_0049.jpeg">
+      <img src="IMG_0050.jpeg">
+      <img src="IMG_0051.jpeg">
+    </div>
+  </div>
+</section>
+
+<!-- FOTO FINAL - IMG_0051.jpeg -->
+<section class="secao">
+  <img src="IMG_0051.jpeg" class="foto-final animar">
+  <h2 class="titulo-script animar" style="margin-top:20px;">Helena & Davi</h2>
+  <p class="animar" style="font-size:14px;margin-top:10px;">Estamos ansiosos para recebê-lo no dia do nosso casamento.<br><b>15 de Dezembro de 2027 - 17:30H</b></p>
+  <div class="botoes animar"><a class="botao vinho" href="#">CONFIRMAR PRESENÇA</a></div>
+</section>
+
+<script>
+const els=document.querySelectorAll('.animar');
+const obs=new IntersectionObserver((e)=>{e.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('ativo')})},{threshold:0.15});
+els.forEach(el=>obs.observe(el));
+
+const fim=new Date('2027-12-15T17:30:00').getTime();
+setInterval(()=>{
+  const dif=fim-new Date().getTime();
+  if(dif>0){
+    document.getElementById('d').innerText=Math.floor(dif/(1000*60*60*24));
+    document.getElementById('h').innerText=Math.floor((dif%(1000*60*60*24))/(1000*60*60));
+    document.getElementById('m').innerText=Math.floor((dif%(1000*60*60))/(1000*60));
+    document.getElementById('s').innerText=Math.floor((dif%(1000*60))/1000);
+  }
+},1000);
+</script>
+</body>
+</html>
